@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+}
+.g-center {
+  justify-items: center;
+}
+.g-vcenter {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+.f-vcenter {
+  align-items: center;
+}
+.f-top {
+  align-items: flex-start;
+}
+.f-center {
+  justify-content: center;
+}
+.f-between {
+  justify-content: space-between
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  padding: 0 15px;
+  //background-color: red;
+}
+.container-full {
+  max-width: 100vw;
+  width: 100%;
+  display: grid;
+  padding: 0;
+  //background-color: red;
+}
+.full {
+  max-width: 100%;
+  width: 100%;
+}

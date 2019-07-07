@@ -1,0 +1,10 @@
+.nav__item {
+  background: none;
+  text-decoration: none;
+  line-height: 1em;
+
+  &:hover {
+    background-color: $green-1;
+    color: $white-2;
+  }
+}
