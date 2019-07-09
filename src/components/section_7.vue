@@ -1,20 +1,25 @@
 <template>
-  <section class="container section-box">
-    <div class="slider-nav grid">
-      <div class="left-btn">
-        <button class="btn btn-dark button-left"></button>
+  <section class="container no-grid p-0 pipels">
+    <div class="title__box full grid g-vcenter">
+      <div class="left">
+        <button class="btn btn-white nav__button-left" @click="$refs.carousel.goToPrev()"></button>
       </div>
-      <div class="header grid g-center">
+      <div class="center">
         <section-title :big="titleText.big" :smail="titleText.smail" :options="titleText.options"></section-title>
       </div>
-      <div class="right-btn">
-        <button class="btn btn-dark button-right"></button>
+      <div class="right">
+        <button class="btn btn-white nav__button-right" @click="$refs.carousel.goToNext()"></button>
       </div>
     </div>
-    <div class="contact grid">
-      <slider-card v-for="(item, index) in cards" :key="index" :cardData="item"></slider-card>
+    <div class="agile__box">
+      <agile ref="carousel" :options="cardOptions">
+        <div class="slide" v-for="(item, index) in cards" :key="index">
+          <div class="slide__content">
+            <slider-card :cardData="item"></slider-card>
+          </div>
+        </div>
+      </agile>
     </div>
-    <img src="@/assets/section_7/icon-bottom.png" alt="icon" class="bottom-icon">
   </section>
 </template>
 
@@ -28,6 +33,37 @@ export default {
   },
   data () {
     return {
+      cardOptions: {
+        dots: false,
+        navButtons: false,
+        slidesToShow: 4,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 860,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 460,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 310,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      },
       titleText: {
         big: 'team members',
         smail: 'We’re some creative people with powerful knowledge & awesome skills behind the scene bringing you the bests',
@@ -72,56 +108,53 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/style/_varibels.scss';
-.section-box {
-  padding-top: 80px;
-  padding-bottom: 100px;
-  position: relative;
+.pipels {
+  padding: 80px 0 100px 0;
 }
-.slider-nav {
-  grid-template-columns: 30px 1fr 30px;
+.slide__content {
+  margin: 0 15px;
 }
-.button-left {
-  background: url('../assets/section_7/button-left.svg') no-repeat;
-  background-position: 3px center;
-  background-size: 20px;
-  background-color: $green-1;
-  margin-top: 5px;
+.title__box {
+  padding: 0 15px;
+  grid-template-columns: 32px 1fr 32px;
+  height: 100px;
 }
-.button-right {
-  background: url('../assets/section_7/button-right.svg') no-repeat;
+
+.nav__button-left {
+  background: url('../assets/section_8/navButton/left-hover.svg') no-repeat;
+  background-size: 32px 32px;
   background-position: center;
-  background-size: 20px;
   background-color: $green-1;
-  margin-top: 5px;
+  transition: background .2s linear;
+  margin-right: 2px;
 }
-.contact {
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+.nav__button-left:hover {
+  background-color: $black-2;
+}
+.nav__button-right {
+  background: url('../assets/section_8/navButton/right-hover.svg') no-repeat;
+  background-size: 32px 32px;
+  background-position: center;
+  background-color: $green-1;
+  transition: background .2s linear;
+  margin-left: 2px;
+}
+.nav__button-right:hover {
+  background-color: $black-2;
 }
 
-.bottom-icon {
-  position: absolute;
-  bottom: -27px;
-  left: 50%;
-  margin-left: -27px;
+.agile__box {
+  max-width: 1200px;
+  width: 100vw;
+  margin-top: 50px;
 }
 
-@media screen and (max-width: 960px){
-  .slider__body {
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 50px;
-  }
-  .contact {
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 80px;
-  }
-}
-@media screen and (max-width: 500px){
-  .slider__body {
+@media screen and (max-width: 460px){
+  .title__box {
     grid-template-columns: 1fr;
   }
-  .contact {
-    grid-template-columns: 1fr;
+  .left, .right {
+    display: none;
   }
 }
 </style>
