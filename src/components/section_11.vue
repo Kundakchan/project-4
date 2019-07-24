@@ -3,7 +3,7 @@
     <div class="container-full maps__content">
       <yandex-map :coords="coords" :zoom="zoom"></yandex-map>
     </div>
-    <div class="container-full form__content">
+    <div class="container-full g-center form__content">
       <div class="container g-vcenter">
         <form class="form__group grid">
           <input type="text" class="form__text" placeholder="name">

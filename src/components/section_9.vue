@@ -1,5 +1,5 @@
 <template>
-  <section class="container-full tariff__section">
+  <section class="container-full g-center tariff__section padding">
     <div class="container">
       <my-title :big="title.big" :smail="title.smail" :options="title.options"></my-title>
     </div>
@@ -87,6 +87,9 @@ export default {
 <style lang="scss" scoped>
 @import '@/style/_varibels.scss';
 
+.padding {
+  padding: 80px 0 100px 0;
+}
 .tariff__section {
   grid-row-gap: 50px;
 }

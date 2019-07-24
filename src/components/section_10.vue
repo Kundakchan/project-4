@@ -1,5 +1,5 @@
 <template>
-  <section class="container-full bg-dark padding">
+  <section class="container-full g-center bg-dark padding">
     <div class="container g-center g-vcenter">
       <div class="content__box grid g-center">
         <div class="logo grid g-vcenter">
