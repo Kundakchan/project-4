@@ -10,6 +10,10 @@
     <section-6/>
     <section-7/>
     <section-8/>
+    <section-9/>
+    <section-10/>
+    <section-11/>
+    <footer-app/>
   </div>
 </template>
 
@@ -24,6 +28,10 @@ import section5 from '@/components/section_5.vue'
 import section6 from '@/components/section_6.vue'
 import section7 from '@/components/section_7.vue'
 import section8 from '@/components/section_8.vue'
+import section9 from '@/components/section_9.vue'
+import section10 from '@/components/section_10.vue'
+import section11 from '@/components/section_11.vue'
+import footerApp from '@/components/footer.vue'
 
 export default {
   components: {
@@ -36,7 +44,11 @@ export default {
     'section-5': section5,
     'section-6': section6,
     'section-7': section7,
-    'section-8': section8
+    'section-8': section8,
+    'section-9': section9,
+    'section-10': section10,
+    'section-11': section11,
+    'footer-app': footerApp
   }
 }
 </script>
